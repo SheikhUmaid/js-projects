@@ -4,13 +4,12 @@ const body = document.querySelector("body");
 // rgbw
 
 btns.forEach((btn, index) => {
-    console.log(btn);
+    console.log(btn.id);
+    btn.style.backgroundColor = btn.id;
     btn.addEventListener("mouseover", (e) => {
         console.log(e);
         console.log(e.target);
-        // switch(e.target.id){
-        //     case 'red':
         body.style.backgroundColor = e.target.id;
-        // }
+
     });
 });
