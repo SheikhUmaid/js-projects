@@ -8,9 +8,9 @@ form.addEventListener("submit", (e) => {
 
 
     if(height === '' || height<= 0 || isNaN(height)){
-        result.innerHTML = "Enter a Valid number"
+        result.innerHTML = "Enter a Valid heigth"
     }else if(weight === '' || weight<= 0 || isNaN(weight)){
-        result.innerHTML = "Enter a valid nmber"
+        result.innerHTML = "Enter a valid weight"
     }else{
         const res = (weight / ((height*height)/10000)).toFixed(2)
         result.innerHTML = res
