@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+    <style>
+        .chances, .guessed{
+            display: flex;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Guess the number game</h1>
+        </div>
+        <p>guess a number between 1, 100</p>
+        <form action="">
+            <input type="number" name="number" id="number">
+        <br>
+        <button>Check</button>
+        </form>
+        <div class="guessed">
+            <div class="">Guessed Numbers: </div>
+            <div class="guessednumbers"></div>
+        </div>
+        <div class="chances">
+            <div class="">Remaining Chances: </div>
+            <div class="r-chances"></div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
