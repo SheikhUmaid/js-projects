@@ -1,24 +1,38 @@
 const form = document.querySelector("form");
-const guessed_numbers = []
-const guessednumbers = document.querySelector(".guessednumbers")
-const random_number = 15
-const remaining_chances = document.querySelector(".r-chances")
-let chances = 10
-form.addEventListener('submit',(e)=>{
-    e.preventDefault();
-    const number = parseInt(document.querySelector('#number'));
-    if(number === random_number){
+const guessed_numbers = [];
+const guessednumbers = document.querySelector(".guessednumbers");
+const random_number = Math.floor(Math.random() *(100-1+1));
+const remaining_chances = document.querySelector(".r-chances");
+const btn = document.querySelector("button");
+const result = document.querySelector("#result");
+const hint = document.querySelector(".hint")
+let chances = 10;
+remaining_chances.innerHTML = chances;
 
-    }else{
-        --chances;
-        if(chances === 0){
-            
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const number = parseInt(document.querySelector("#number").value);
+    if (number === random_number) {
+        btn.innerHTML = "Reload";
+        btn.addEventListener("click", (e) => location.reload());
+        result.innerHTML = "You Won";
+    } else {
+        if (number < random_number){
+            hint.innerHTML = 'try high'
+        }else{
+            hint.innerHTML = 'try low'
         }
-        guessed_numbers.push(number.value)
-        remaining_chances.innerHTML = chances
-        guessed_numbers.forEach((e)=>{
-            guessednumbers.innerHTML += e
-        })
-        number.value = ''
+        --chances;
+        if (chances === 0) {
+            btn.innerHTML = "Reload";
+            btn.addEventListener("click", (e) => location.reload());
+            result.innerHTML = "Oops no chances left";
+        }
+        guessed_numbers.push(number);
+        remaining_chances.innerHTML = chances;
+        guessed_numbers.forEach((e) => {
+            guessednumbers.innerHTML = `${guessed_numbers},`;
+        });
+        document.querySelector("#number").value = "";
     }
-})
+});

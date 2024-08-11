@@ -13,6 +13,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: #212121;
+            color: white;
         }
     </style>
 </head>
@@ -23,7 +25,7 @@
         </div>
         <p>guess a number between 1, 100</p>
         <form action="">
-            <input type="number" name="number" id="number">
+            <input type="number" name="number" id="number" required>
         <br>
         <button>Check</button>
         </form>
@@ -32,9 +34,14 @@
             <div class="guessednumbers"></div>
         </div>
         <div class="chances">
-            <div class="">Remaining Chances: </div>
+            <div >Remaining Chances: </div>
             <div class="r-chances"></div>
         </div>
+        <div class="">
+            <div >hint: </div>
+            <div class="hint"></div>
+        </div>
+        <h1 id="result"></h1>
     </div>
 </body>
 <script src="index.js"></script>
